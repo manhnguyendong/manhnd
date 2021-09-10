@@ -1,0 +1,19 @@
+from tkinter import *
+from tkinter.ttk import *
+from tkinter.messagebox import *
+
+root = Tk()
+root.geometry('300x150')
+root.title('Tkinter Yes/No Dialog')
+
+def confirm():
+    answer = askokcancel(title='Confirmation', message='Delete will delete all data')
+    if answer:
+        showinfo(title='Deletion Status', message='The data is deleted successfully')
+    else:
+        root.destroy()
+
+button = Button(root, text='Delete All', command=confirm)
+button.pack()
+
+mainloop()
